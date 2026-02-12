@@ -17,13 +17,6 @@ public partial class MusicManager : Node
 	}
 
 
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
-
 	public void MusicPlay(AudioStream stream = null)
 	{
 		if (stream != null)

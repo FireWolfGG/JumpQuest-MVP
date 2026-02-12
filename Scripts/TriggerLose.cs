@@ -10,16 +10,9 @@ public partial class TriggerLose : Area2D
 		BodyEntered += RestartLevel;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
 	public void RestartLevel(Node2D body)
 	{
 		if (body.IsInGroup("Player"))
-		{
 			GetTree().CallDeferred("change_scene_to_file", $"res://Scenes/{RoomLose}.tscn");	
-		}
 	}
 }

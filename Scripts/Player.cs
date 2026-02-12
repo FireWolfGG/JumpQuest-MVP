@@ -39,18 +39,14 @@ public partial class Player : CharacterBody2D
             sprite.FlipH = !facingRight;
 
             if (!isJumping)
-            {
                 sprite.Play("Walk");
-            }
         }
         else
         {
             velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
             
             if (!isJumping)
-            {
                 sprite.Play("Idle");
-            }
         }
 
         Velocity = velocity;
