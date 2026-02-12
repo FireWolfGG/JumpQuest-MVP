@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d4asop1vhva8e"]
+
+[ext_resource type="Texture2D" uid="uid://dnuidsllvp785" path="res://oak_woods_v1.0/background/background_layer_1.png" id="1_igrul"]
+[ext_resource type="Texture2D" uid="uid://bh6tlt0qqmimm" path="res://oak_woods_v1.0/background/background_layer_2.png" id="2_minv7"]
+[ext_resource type="Texture2D" uid="uid://d082xmv4pdp54" path="res://oak_woods_v1.0/background/background_layer_3.png" id="3_lxq7o"]
+
+[node name="Background" type="Control" unique_id=1779774464]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Parallax2D1" type="Parallax2D" parent="." unique_id=338094926]
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D1" type="Sprite2D" parent="Parallax2D1" unique_id=1465663939]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6000001)
+texture = ExtResource("1_igrul")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=114829220]
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D2" unique_id=1179869034]
+position = Vector2(576, 323.99997)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("2_minv7")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1120294357]
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D3" unique_id=977220920]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("3_lxq7o")

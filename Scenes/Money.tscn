@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://djyxmparlpx4n"]
+
+[ext_resource type="Script" uid="uid://cn51ql0f417di" path="res://Scripts/Money.cs" id="1_6nbbj"]
+[ext_resource type="Texture2D" uid="uid://dagvqxujdur34" path="res://Asset/MonedaD.png" id="1_rn8nm"]
+[ext_resource type="AudioStream" uid="uid://i1ws7b2vk31t" path="res://Asset/sound/SFX/player/smack.MP3" id="3_alt5c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nbbj"]
+atlas = ExtResource("1_rn8nm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alt5c"]
+atlas = ExtResource("1_rn8nm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5fd7"]
+atlas = ExtResource("1_rn8nm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uusl1"]
+atlas = ExtResource("1_rn8nm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grnwu"]
+atlas = ExtResource("1_rn8nm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_grnwu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nbbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alt5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5fd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uusl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grnwu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ag4nf"]
+radius = 7.0
+
+[node name="Money" type="Area2D" unique_id=1944768283 node_paths=PackedStringArray("audio")]
+script = ExtResource("1_6nbbj")
+audio = NodePath("AudioStreamPlayer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1214148391]
+sprite_frames = SubResource("SpriteFrames_grnwu")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1578918888]
+shape = SubResource("CircleShape2D_ag4nf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=441178250]
+stream = ExtResource("3_alt5c")

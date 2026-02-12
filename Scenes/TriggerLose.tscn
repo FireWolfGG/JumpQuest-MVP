@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dbfb1n7y7whok"]
+
+[ext_resource type="Script" uid="uid://dyuk6vq36qst0" path="res://Scripts/TriggerLose.cs" id="1_cp45o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg1ga"]
+size = Vector2(1152, 66)
+
+[node name="TriggerLose" type="Area2D" unique_id=205089419]
+script = ExtResource("1_cp45o")
+RoomLose = "Room1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=133246036]
+position = Vector2(576, -12)
+shape = SubResource("RectangleShape2D_qg1ga")
+debug_color = Color(0.7027678, 0, 0.1116815, 0.41960785)

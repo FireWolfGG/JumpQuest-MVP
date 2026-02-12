@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://exfxyjw17tlb"]
+
+[ext_resource type="Script" uid="uid://b0u5yjfgbyxqh" path="res://Scripts/TriggerWin.cs" id="1_iw1e2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycerc"]
+size = Vector2(61.5, 20)
+
+[node name="TriggerWin" type="Area2D" unique_id=853674998]
+script = ExtResource("1_iw1e2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1572857791]
+position = Vector2(30.75, 0)
+shape = SubResource("RectangleShape2D_ycerc")
+debug_color = Color(0.12833121, 0.6396355, 0.28841412, 0.41960785)
