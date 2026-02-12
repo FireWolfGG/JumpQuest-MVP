@@ -8,13 +8,12 @@ public partial class Final : Control
 	[Export] private Button buttonResetGame;
 	[Export] private Button buttonExit;
 	private AudioStreamPlayer audio = new AudioStreamPlayer();
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		AudioStream finalMusic = GD.Load<AudioStream>("res://Asset/sound/music/cloud-of-sorrow-13984.mp3");
 		MusicManager.Instance.MusicPlay(finalMusic);
 		buttonResetGame.GrabFocus();
-		labelText.Text = $"Разработал: [color=orange]FireWolfGG[/color]\nИспользуемый ассет: OakWoods\nСобранные монеты: [color=yellow]{Money.count}[/color]";
+		labelText.Text = $"Разработал: [color=orange]FireWolfGG[/color]\nИспользуемый ассет: OakWoods\nСобранные монеты: [color=yellow]{Money.Count}[/color]";
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

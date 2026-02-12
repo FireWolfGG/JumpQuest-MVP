@@ -7,11 +7,11 @@
 [ext_resource type="FontFile" uid="uid://duf8lwvkjgl6q" path="res://Fonts/determination-monorus-by-lyajk1.otf" id="5_loo7a"]
 [ext_resource type="PackedScene" uid="uid://bnogacciqlcyl" path="res://Scenes/MyAnimations.tscn" id="6_if7li"]
 
-[node name="MainMenu" type="Node2D" unique_id=1121717799 node_paths=PackedStringArray("animation", "ButtonPlay", "ButtonExit")]
+[node name="MainMenu" type="Node2D" unique_id=1121717799 node_paths=PackedStringArray("animation", "buttonPlay", "buttonExit")]
 script = ExtResource("1_8um5k")
 animation = NodePath("MyAnimations")
-ButtonPlay = NodePath("VBoxContainer/Play")
-ButtonExit = NodePath("VBoxContainer/Exit")
+buttonPlay = NodePath("VBoxContainer/Play")
+buttonExit = NodePath("VBoxContainer/Exit")
 
 [node name="Parallax2D1" type="Parallax2D" parent="." unique_id=302930610]
 repeat_size = Vector2(1152, 0)
