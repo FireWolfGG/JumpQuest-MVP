@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading;
 
 public partial class MainMenu : Node2D
 {
@@ -14,18 +15,8 @@ public partial class MainMenu : Node2D
 		MusicManager.Instance.MusicPlay(music);
 		buttonPlay.GrabFocus();
 		animation.AnimationFinished += GoToGame;
-
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-
-		if (buttonPlay.ButtonPressed)
-			animation.Play("transition_anim");
-
-		else if (buttonExit.ButtonPressed)
-			GetTree().CreateTimer(0.1).Timeout += () => GetTree().CallDeferred("quit", true);
+		buttonPlay.Pressed += () => animation.Play("transition_anim");
+		buttonExit.Pressed += () => GetTree().CreateTimer(0.1).Timeout += () => GetTree().Quit();
 	}
 
 	public void GoToGame(StringName AnimName)

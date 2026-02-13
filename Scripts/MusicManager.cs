@@ -3,7 +3,6 @@ using System;
 
 public partial class MusicManager : Node
 {
-
 	public static MusicManager Instance;
 	private AudioStreamPlayer audio;
 	private AudioStream stream;
@@ -14,7 +13,6 @@ public partial class MusicManager : Node
 		audio.ProcessMode = ProcessModeEnum.Always;
 		audio.Finished += () => audio.Play();
 	}
-
 
 	public void MusicPlay(AudioStream stream = null)
 	{

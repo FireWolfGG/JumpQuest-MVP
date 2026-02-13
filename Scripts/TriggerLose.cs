@@ -11,7 +11,7 @@ public partial class TriggerLose : Area2D
 
 	public void RestartLevel(Node2D body)
 	{
-		if (body.IsInGroup("Player"))
-			GetTree().CallDeferred("change_scene_to_file", $"res://Scenes/{RoomLose}.tscn");	
+		if (!body.IsInGroup("Player")) return;
+		GetTree().CallDeferred("change_scene_to_file", $"res://Scenes/{RoomLose}.tscn");	
 	}
 }

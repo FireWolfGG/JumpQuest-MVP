@@ -3,7 +3,7 @@ using Godot;
 public partial class TriggerWin : Area2D
 {
 	[Export] public string RoomNext;
-	[Export] public AnimationPlayer animation;
+	[Export] private AnimationPlayer animation;
 	public override void _Ready()
 	{
 		BodyEntered += NextLevel;
@@ -12,8 +12,8 @@ public partial class TriggerWin : Area2D
 
 	public void NextLevel(Node2D body)
 	{
-		if (body.IsInGroup("Player"))
-			animation.Play("transition_anim");
+		if (!body.IsInGroup("Player")) return;
+		animation.Play("transition_anim");
 	}
 
 	public void AnimFinish(StringName AnimName)

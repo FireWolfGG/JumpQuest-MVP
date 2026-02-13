@@ -5,7 +5,7 @@ public partial class Player : CharacterBody2D
 {
     public const float Speed = 300.0f;
     public const float JumpVelocity = -400.0f;
-    [Export] public AnimatedSprite2D Sprite;
+    [Export] private AnimatedSprite2D sprite;
     private bool isJumping = false;
     private bool facingRight;
 
@@ -16,7 +16,7 @@ public partial class Player : CharacterBody2D
         if (!IsOnFloor())
         {
             velocity += GetGravity() * (float)delta;
-            Sprite.Play("Jump");
+            sprite.Play("Jump");
             isJumping = true;
         }
 
@@ -36,17 +36,17 @@ public partial class Player : CharacterBody2D
         {
             velocity.X = direction.X * Speed;
             facingRight = direction.X > 0;
-            Sprite.FlipH = !facingRight;
+            sprite.FlipH = !facingRight;
 
             if (!isJumping)
-                Sprite.Play("Walk");
+                sprite.Play("Walk");
         }
         else
         {
             velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
             
             if (!isJumping)
-                Sprite.Play("Idle");
+                sprite.Play("Idle");
         }
 
         Velocity = velocity;
@@ -55,7 +55,7 @@ public partial class Player : CharacterBody2D
         if (IsOnFloor() && isJumping)
         {
             isJumping = false;
-            Sprite.Play("Idle");
+            sprite.Play("Idle");
         }
     }
 }
