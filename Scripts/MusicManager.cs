@@ -19,13 +19,9 @@ public partial class MusicManager : Node
 	public void MusicPlay(AudioStream stream = null)
 	{
 		if (stream != null)
+		{
 			audio.Stream = stream;
 			audio.Play();
+		}
 	}
-
-	public void MusicFinish()
-	{
-		audio.Stop();
-	}
-
 }
